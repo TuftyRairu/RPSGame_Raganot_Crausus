@@ -1,0 +1,48 @@
+.title, .label, .images, .result {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  margin-top: 18vh;
+}
+
+.label {
+  flex-direction: row;
+  margin: 5vh 0;
+}
+.label p {
+  margin: 0 6.5vw;
+}
+
+.images {
+  flex-direction: row;
+}
+.images img {
+  margin: 0 5vw;
+  cursor: pointer;
+}
+
+.result {
+  padding: 8vh;
+}
+.result .res_t {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.result .res_t .btn {
+  width: 10vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: cadetblue;
+}/*# sourceMappingURL=styles.css.map */

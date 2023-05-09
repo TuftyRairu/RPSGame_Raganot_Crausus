@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>RPS Game</title>
+</head>
+<body>
+    <div class="title">
+        <h1>RPS GAME</h1>
+    </div>
+    <div class="label">
+        <p>Rock</p><p>Paper</p><p>Scissors</p>
+    </div>
+    <div class="images">
+        <img id="rock" src="styles/images/icons8-rock-96.png" alt="rock">
+        <img id="paper" src="styles/images/icons8-page-with-curl-96.png" alt="rock">
+        <img id="scissors" src="styles/images/icons8-scissors-96.png" alt="rock">
+    </div>
+    <div class="result">
+        <div class="res_t">
+            <h3 id="user">--</h3>
+            <h3 id="comp">--</h3>
+            <h3 id="res">~~Result-Here~~</h3>
+            <br>
+            <button class="btn" onclick="reset()">Reset</button>
+        </div>
+    </div>
+</body>
+<script>
+    const rock = document.querySelector('#rock');
+    const paper = document.querySelector('#paper');
+    const scissor = document.querySelector('#scissors');
+    let resul = document.getElementById('res');
+    let user = document.getElementById('user');
+    let comp = document.getElementById('comp');
+
+    rock.addEventListener('click', function(){
+        const choices = ['r','p','s'];
+        let computer = choices[Math.floor(choices.length * Math.random())];
+
+        user.textContent = 'You have chosen Rock!';
+        if(computer === 's'){
+            comp.textContent = 'Computer have chosen Scissors!';
+        }else if(computer === 'p'){
+        comp.textContent = 'Computer have chosen Paper!';
+        }else{
+        comp.textContent = 'Computer have chosen Rock!';
+        }
+        
+        if(computer === choices[0]){
+            resul.textContent = 'Draw!';
+        }else if(computer === choices[1]){
+            resul.textContent = 'You Lost!';
+        }else{
+            resul.textContent = 'You Win!';
+        }
+        console.log(computer);
+    }, false);
+    paper.addEventListener('click', function(){
+        const choices = ['r','p','s'];
+        let computer = choices[Math.floor(choices.length * Math.random())];
+        
+        user.textContent = 'You have chosen Paper!';
+        if(computer === 's'){
+            comp.textContent = 'Computer have chosen Scissors!';
+        }else if(computer === 'p'){
+        comp.textContent = 'Computer have chosen Paper!';
+        }else{
+        comp.textContent = 'Computer have chosen Rock!';
+        }
+        
+        if(computer === choices[1]){
+            resul.textContent = 'Draw!';
+        }else if(computer === choices[2]){
+            resul.textContent = 'You Lost!';
+        }else{
+            resul.textContent = 'You Win!';
+        }
+        console.log(computer);
+    }, false);
+    scissor.addEventListener('click', function(){
+        const choices = ['r','p','s'];
+        let computer = choices[Math.floor(choices.length * Math.random())];
+        
+        user.textContent = 'You have chosen Scissors!';
+        if(computer === 's'){
+            comp.textContent = 'Computer have chosen Scissors!';
+        }else if(computer === 'p'){
+        comp.textContent = 'Computer have chosen Paper!';
+        }else{
+        comp.textContent = 'Computer have chosen Rock!';
+        }
+        
+        if(computer === choices[2]){
+            resul.textContent = 'Draw!';
+        }else if(computer === choices[0]){
+            resul.textContent = 'You Lost!';
+        }else{
+            resul.textContent = 'You Win!';
+        }
+        console.log(computer);
+    }, false);
+
+    function reset() {
+        user.textContent = '--';
+        comp.textContent = '--';
+        resul.textContent = '~~Result-Here~~';
+    }
+</script>
+</html>
